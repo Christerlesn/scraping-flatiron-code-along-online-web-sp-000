@@ -19,7 +19,11 @@ class Scraper
     # binding.pry
   end
 
-    def self.make_courses
+  def get_courses
+    doc.css(".post")
+  end
+
+  def self.make_courses
     Course.all.each do |course|
       if course.title && course.title != ""
         puts "Title: #{course.title}"
