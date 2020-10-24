@@ -15,12 +15,7 @@ class Scraper
     end
   end
   binding.pry
-  #doc = Nokogiri::HTML(open("http://learn-co-curriculum.github.io/site-for-scraping/courses"))
-  #all the courses = doc.css(".post")
-  # title = doc.css(".post").first.css("h2").text
-  # schedule = doc.css(".post").first.css(".date").text
-  # description = doc.css(".post").first.css("p").text
-  def print_courses
+
     self.make_courses
     Course.all.each do |course|
       if course.title && course.title != ""
